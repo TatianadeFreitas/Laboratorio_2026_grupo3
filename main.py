@@ -1,3 +1,5 @@
+'''Se necesita ua funcion que lea la opcionque ingrese el usuario para poder reutilizarla y poder aplicar los filtros ante errores del usuario'''
+
 def mostrar_menu():
     print("--- MENÚ PRINCIPAL ---")
     print("1: Registrar")
@@ -6,13 +8,68 @@ def mostrar_menu():
     print("4: Listar")
     print("5: Salir del sistema")
 
-    opcion = int(input("Ingrese una opción: "))
-    return opcion
+    #return leer_opcion() deberia ser una funcion que este en la acrpeta de Exeptions?
 
-def menu_registar(opcion):
-    print("--- Menu REGISTAR ---")
-    print("1: Criterio")
-    print("2: Opcion IA")
-    print("3: Caso de Uso")
-    print("4: Evaluación individual")
-    print("5: Salir")
+def menu_registar():
+    while True:
+        print("--- Menú REGISTAR ---")
+        print("1: Criterio")
+        print("2: Opcion IA")
+        print("3: Caso de Uso")
+        print("4: Evaluación individual")
+        print("5: Salir")
+        #opcion = leer_opcion()
+
+        '''Se usaria if?
+
+        if opcion == 1:
+        
+        elif opcion == 2:
+        
+        elif opcion == 3:
+        
+        elif opcion == 4:
+        
+        elif opcion == 5:
+        '''
+
+def menu_actualizar():
+    while True:
+        print("--- Menú ACTUALIZAR ---")
+        print("1: Presupuesto de un caso")
+        print("2: Precio o consumo de una opción")
+        print("3: Salir")
+        #opcion = leer_opcion()
+
+        '''
+        if opcion == 1:
+
+        elif opcion == 2:
+
+        elif opcion == 3:
+        '''
+
+def menu_listar():
+    while True:
+        print("--- Menú LISTAR ---")
+        print("1: Criterios")
+        print("2: Opciones")
+        print("3: Casos de uso")
+        print("4: Evaluaciones de un caso")
+        print("5: Ranking de un caso")
+        print("6: Salir")
+        #opcion = leer_opcion()
+
+        '''
+        if opcion == 1:
+
+        elif opcion == 2:
+            
+        elif opcion == 3:
+            
+        elif opcion == 4:
+            
+        elif opcion == 5:
+            
+        elif opcion == 6:
+        '''
