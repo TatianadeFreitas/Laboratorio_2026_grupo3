@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+#FALTAN HACER LAS VALIDACIÓNES CORRESPONDIENTES
+
 class OpcionIA(ABC):
     def __init__(self, codigo, nombre, puntajes):
         self.codigo = codigo
@@ -21,7 +23,7 @@ class ServicioAPI(OpcionIA):
     def costo_estimado(self):
         return (self.consultas_estimadas / 1000) * self.costo_por_1000
 
-class Plan_Mensual(OpcionIA):
+class PlanMensual(OpcionIA):
     def __init__(self, codigo, nombre, puntajes, cantidad_usuarios, costo_por_usuario):
         super().__init__(codigo, nombre, puntajes)
         self.cantidad_usuarios = cantidad_usuarios
