@@ -1,6 +1,5 @@
-'''Se necesita ua funcion que lea la opcionque ingrese el usuario para poder reutilizarla y poder aplicar los filtros ante errores del usuario'''
-
 def mostrar_menu():
+    #opcion = 0 y despues la leo
     print("--- MENÚ PRINCIPAL ---")
     print("1: Registrar")
     print("2: Comparar opciones para un caso")
@@ -8,18 +7,18 @@ def mostrar_menu():
     print("4: Listar")
     print("5: Salir del sistema")
 
-    #return leer_opcion() deberia ser una funcion que este en la acrpeta de Exeptions?
 
 def menu_registar():
-    #se ´deberia usar while True para mantenernos dentro del menu?
+    #opcion = 0 y despues la leo
     print("--- Menú REGISTAR ---")
     print("1: Criterio")
     print("2: Opcion IA")
     print("3: Caso de Uso")
     print("4: Evaluación individual")
     print("5: Salir")
-    #opcion = leer_opcion()
-
+    
+#Aca se usa el while mientras el usuario no ponga una opcion valida asi le sigue pidiendo que ingrese una opcion, 
+#si esta es valida sale del while y se ejecutan los if los cuales necesitan funciones para ir navegando entre los menus
     '''Se usaria if?
 
     if opcion == 1:
@@ -34,11 +33,11 @@ def menu_registar():
     '''
 
 def menu_actualizar():
+    #opcion = 0 y despues la leo
     print("--- Menú ACTUALIZAR ---")
     print("1: Presupuesto de un caso")
     print("2: Precio o consumo de una opción")
     print("3: Salir")
-    #opcion = leer_opcion()
 
     '''
     if opcion == 1:
@@ -49,6 +48,7 @@ def menu_actualizar():
     '''
 
 def menu_listar():
+    #opcion = 0 y despues la leo
     print("--- Menú LISTAR ---")
     print("1: Criterios")
     print("2: Opciones")
@@ -56,7 +56,6 @@ def menu_listar():
     print("4: Evaluaciones de un caso")
     print("5: Ranking de un caso")
     print("6: Salir")
-    #opcion = leer_opcion()
 
     '''
     if opcion == 1:
