@@ -1,5 +1,20 @@
+# Función que valida que la opción que ingresa el usuario sea válida
+def leer_opcion(minimo, maximo):
+    opcion = 0
+    while opcion < minimo or opcion > maximo:
+        try:
+            opcion = int(input("Ingrese una de las opciones del menú: "))
+
+            if opcion < minimo or opcion > maximo:
+                print("Error: Ingrese una opción válida.")
+
+        except ValueError:
+            print("Error: Debe ingresar un número entero.")
+            opcion = 0
+    return opcion
+
+
 def mostrar_menu():
-    #opcion = 0 y despues la leo
     print("--- MENÚ PRINCIPAL ---")
     print("1: Registrar")
     print("2: Comparar opciones para un caso")
@@ -7,20 +22,23 @@ def mostrar_menu():
     print("4: Listar")
     print("5: Salir del sistema")
 
+    opcion = leer_opcion(1, 5)
 
-def menu_registar():
-    #opcion = 0 y despues la leo
-    print("--- Menú REGISTAR ---")
+
+    return opcion
+
+
+def menu_registrar():
+    print("--- MENÚ REGISTRAR ---")
     print("1: Criterio")
-    print("2: Opcion IA")
-    print("3: Caso de Uso")
+    print("2: Opción de IA")
+    print("3: Caso de uso")
     print("4: Evaluación individual")
     print("5: Salir")
-    
-#Aca se usa el while mientras el usuario no ponga una opcion valida asi le sigue pidiendo que ingrese una opcion, 
-#si esta es valida sale del while y se ejecutan los if los cuales necesitan funciones para ir navegando entre los menus
-    '''Se usaria if?
 
+    opcion = leer_opcion(1, 5)
+
+    '''
     if opcion == 1:
     
     elif opcion == 2:
@@ -32,24 +50,28 @@ def menu_registar():
     elif opcion == 5:
     '''
 
+
 def menu_actualizar():
-    #opcion = 0 y despues la leo
-    print("--- Menú ACTUALIZAR ---")
+    print("--- MENÚ ACTUALIZAR ---")
     print("1: Presupuesto de un caso")
     print("2: Precio o consumo de una opción")
     print("3: Salir")
 
+    opcion = leer_opcion(1, 3)
     '''
     if opcion == 1:
-
+    
     elif opcion == 2:
-
+    
     elif opcion == 3:
+    
+    elif opcion == 4:
+    
+    elif opcion == 5:
     '''
 
 def menu_listar():
-    #opcion = 0 y despues la leo
-    print("--- Menú LISTAR ---")
+    print("--- MENÚ LISTAR ---")
     print("1: Criterios")
     print("2: Opciones")
     print("3: Casos de uso")
@@ -57,16 +79,15 @@ def menu_listar():
     print("5: Ranking de un caso")
     print("6: Salir")
 
+    opcion = leer_opcion(1, 6)
     '''
     if opcion == 1:
-
+    
     elif opcion == 2:
-        
+    
     elif opcion == 3:
-        
+    
     elif opcion == 4:
-        
+    
     elif opcion == 5:
-        
-    elif opcion == 6:
     '''
