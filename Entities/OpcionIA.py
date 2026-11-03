@@ -10,7 +10,7 @@ class OpcionIA(ABC):
 
     @abstractmethod
     def costo_estimado(self):
-        pass # se usa ya que el metodo no tiene cuerpo asi no da error (preguntar si esta bien)
+        pass # se usa ya que el metodo no tiene cuerpo asi no da error
         #tipo de dato float     
 
 
@@ -21,6 +21,7 @@ class ServicioAPI(OpcionIA):
         self.consultas_estimadas = consultas_estimadas
 
     def costo_estimado(self):
+        #se le define el cuerpo al metodo heredado
         return (self.consultas_estimadas / 1000) * self.costo_por_1000
 
 class PlanMensual(OpcionIA):
