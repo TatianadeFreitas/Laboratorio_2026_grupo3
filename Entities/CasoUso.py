@@ -1,10 +1,10 @@
 class CasoUso:
     
     def __init__(self, codigo, nombre, presupuesto, puntaje_minimo):
-        self.__codigo = codigo
-        self.nombre = nombre
-        self.presupuesto = presupuesto
-        self.puntaje_minimo = puntaje_minimo
+        self.__codigo = codigo 
+        self.__nombre = nombre
+        self.__presupuesto = presupuesto
+        self.__puntaje_minimo = puntaje_minimo
 
     @property
     def codigo(self):
@@ -16,7 +16,7 @@ class CasoUso:
 
     @nombre.setter
     def nombre(self, valor):
-        if not isinstance(valor, str): #Comprobamos que el valor sea una cadena de texto
+        if type (valor) != str: #Comprobamos que el valor sea una cadena de texto
             raise ValueError("El nombre debe ser un texto.") #Si no es un texdto, lanzamos un error con un mensaje 
 
         if valor.strip() == "": #Comprueba que el valor no esté vacío después de eliminar los espacios en blanco al inicio y al final
