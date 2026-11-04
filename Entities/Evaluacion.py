@@ -60,3 +60,8 @@ class Evaluacion:
         return (f"Código: {self.__codigo} | Fecha: {fecha_str} | "
                 f"Opción: {self.__opcion.nombre} | Caso: {self.__caso.nombre} | "
                 f"Puntaje: {self.__puntaje_total:.2f} | Costo: USD {self.__costo_mensual:.2f} | Estado: {self.__estado}")
+
+    def actualizar_resultados(self, puntaje, costo, estado):
+        self.__puntaje_total = puntaje
+        self.__costo_mensual = costo
+        self.__estado = estado
