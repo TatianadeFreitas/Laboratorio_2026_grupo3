@@ -22,7 +22,7 @@ class OpcionIA(ABC):
         if valor.strip() == "":  # Comprueba que el valor no esté vacío después de eliminar los espacios en blanco al inicio y al final
             raise ValueError("El nombre no puede estar vacío.")
 
-        self.__nombre = valor.strip()
+        self._nombre = valor.strip()
 
     @property
     def puntajes(self):
