@@ -2,10 +2,21 @@
 from datetime import datetime
 
 # Importamos las clases que vamos a utilizar.
-from Criterio import Criterio
-from CasoUso import CasoUso
-from OpcionIA import OpcionIA, ServicioAPI, PlanMensual
-from Evaluacion import Evaluacion
+# Primero intentamos importar los módulos desde el mismo paquete (Entities),
+# utilizando el punto (.) para indicar que pertenecen a la misma carpeta
+try:
+    from .Criterio import Criterio
+    from .CasoUso import CasoUso
+    from .OpcionIA import OpcionIA, ServicioAPI, PlanMensual
+    from .Evaluacion import Evaluacion
+
+# Si ocurre un error en esos imports, intentamos importarlos sin el punto (busca el módulo sin especificar el paquete)
+except ImportError:
+    from Criterio import Criterio
+    from CasoUso import CasoUso
+    from OpcionIA import OpcionIA, ServicioAPI, PlanMensual
+    from Evaluacion import Evaluacion
+
 from Exceptions.ErrorLaboratorio import ErrorLaboratorio
 
 
@@ -24,6 +35,17 @@ class Sistema:
         self.__proximo_codigo_caso = 1
         self.__proximo_codigo_evaluacion = 1
 
+    @property
+    def criterios(self):
+        return self.__criterios
+
+    @property
+    def opciones(self):
+        return self.__opciones
+
+    @property
+    def casos(self):
+        return self.__casos
 
     # Método para buscar un criterio
     def buscar_criterio(self, codigo):
