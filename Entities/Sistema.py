@@ -6,7 +6,7 @@ from Criterio import Criterio
 from CasoUso import CasoUso
 from OpcionIA import OpcionIA, ServicioAPI, PlanMensual
 from Evaluacion import Evaluacion
-from ErrorLaboratorio import ErrorLaboratorio
+from Exceptions.ErrorLaboratorio import ErrorLaboratorio
 
 
 class Sistema:

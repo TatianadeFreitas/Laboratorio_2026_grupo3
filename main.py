@@ -2,9 +2,9 @@ import math  # math lo usamos solo para detectar valores raros como "inf" o "nan
 
 # Importamos las clases que necesitamos desde sus carpetas.
 # "entities.Sistema" significa: carpeta entities, archivo Sistema.py.
-from entities.Sistema import Sistema
-from entities.OpcionIA import ServicioAPI, PlanMensual
-from exceptions.ErrorLaboratorio import ErrorLaboratorio
+from Entities.Sistema import Sistema
+from Entities.OpcionIA import ServicioAPI, PlanMensual
+from Exceptions.ErrorLaboratorio import ErrorLaboratorio
 
 
 # Función que valida que la opción que ingresa el usuario sea válida
