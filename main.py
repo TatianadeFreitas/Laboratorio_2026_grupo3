@@ -27,17 +27,20 @@ def leer_opcion(minimo, maximo):
             opcion = 0 # lo dejamos fuera de rango para que el while repita
     return opcion
 
-def leer_texto(mensaje):
-    # Pide un texto hasta que no esté vacío
-    texto = ""
-    while texto.strip() == "":  # strip() saca espacios; "   " cuenta como vacío
-        texto = input(mensaje)
-        if texto.strip() == "":
+def leer_texto(mensaje):                                                             #leer_texto se usa para pedir nombres: el del criterio, el
+                                                                                     #seguiría con un nombre vacío. Con ella, el programa repite 
+                                                                                     #la pregunta hasta que haya algo escrito:
+    # Pide un texto hasta que no esté vacío                                          # de la opción de IA y el del caso de uso. Esos tres datos 
+    texto = ""                                                                       #son texto libre, y la letra pide validar campos vacíos.
+                                                                                     #Sin esa función, el usuario podría apretar Enter sin
+    while texto.strip() == "":  # strip() saca espacios; "   " cuenta como vacío     #escribir nada, o escribir solo espacios, y el programa 
+        texto = input(mensaje)                                                       #seguiría con un nombre vacío. Con ella, el programa repite 
+        if texto.strip() == "":                                                      #la pregunta hasta que haya algo escrito:
             print("Error: El campo no puede estar vacío.")
     return texto.strip()  # devolvemos el texto sin espacios sobrantes
 
 def leer_entero(mensaje, minimo=None, maximo=None):
-    # Pide un entero y verifica el rango si se indica
+    # Pide un entero y verifica el rango si se indica 
     # controla el rango. Con None significa "sin límite".
 
     while True:  # bucle infinito: solo se sale con return cuando el dato es válido
@@ -416,15 +419,15 @@ def menu_listar(sistema):
             listar_ranking_caso(sistema)
  
  
-def main():
+if __name__ == "__main__":
     # Creamos UN solo Sistema, que guarda todos los datos mientras el
     # programa está abierto (no hay archivos ni base de datos).
     sistema = Sistema()
- 
+
     opcion = 0
     while opcion != 5:  # el programa termina al elegir 5 en el menú principal
         opcion = mostrar_menu()
- 
+
         if opcion == 1:
             menu_registrar(sistema)
         elif opcion == 2:
@@ -433,6 +436,5 @@ def main():
             menu_actualizar(sistema)
         elif opcion == 4:
             menu_listar(sistema)
- 
+
     print("Gracias por usar el sistema. ¡Hasta luego!")
- 
