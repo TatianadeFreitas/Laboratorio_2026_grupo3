@@ -1,28 +1,27 @@
 from abc import ABC, abstractmethod
+from Exceptions.ErrorLaboratorio import ErrorLaboratorio
 
 class OpcionIA(ABC):
     def __init__(self, codigo, nombre, puntajes):
-        self._codigo = codigo
+        self.__codigo = codigo
         self.nombre = nombre
-        self.puntajes = puntajes  # es un diccionario 
+        self.puntajes = puntajes
 
     @property
     def codigo(self):
-        return self._codigo
+        return self.__codigo
 
     @property
     def nombre(self):
-        return self._nombre
+        return self.__nombre
 
     @nombre.setter
     def nombre(self, valor):
-        if type(valor) != str:  # Comprobamos que el valor sea una cadena de texto
-            raise ValueError("El nombre debe ser un texto.")  # Si no es un texto, lanzamos un error con un mensaje 
-
-        if valor.strip() == "":  # Comprueba que el valor no esté vacío después de eliminar los espacios en blanco al inicio y al final
-            raise ValueError("El nombre no puede estar vacío.")
-
-        self._nombre = valor.strip()
+        if type(valor) != str:
+            raise ErrorLaboratorio("El nombre debe ser un texto.")
+        if valor.strip() == "":
+            raise ErrorLaboratorio("El nombre no puede estar vacío.")
+        self.__nombre = valor.strip()
 
     @property
     def puntajes(self):
@@ -44,7 +43,7 @@ class OpcionIA(ABC):
         pass # se usa ya que el metodo no tiene cuerpo asi no da error
         #tipo de dato float     
 
-class ServicioAPI(OpcionIA):
+class ServicioAPI(OpcionIA): #calcula el costo por consultas
     def __init__(self, codigo, nombre, puntajes, costo_por_1000, consultas_estimadas):
         super().__init__(codigo, nombre, puntajes)
         self.costo_por_1000 = costo_por_1000
@@ -79,7 +78,7 @@ class ServicioAPI(OpcionIA):
         return (self.consultas_estimadas / 1000) * self.costo_por_1000
 
 
-class PlanMensual(OpcionIA):
+class PlanMensual(OpcionIA): #calcula el costo por consultas
     def __init__(self, codigo, nombre, puntajes, cantidad_usuarios, costo_por_usuario):
         super().__init__(codigo, nombre, puntajes) #se usa super para acceder a los métodos de la clase padre: OpcionIA
         self.cantidad_usuarios = cantidad_usuarios

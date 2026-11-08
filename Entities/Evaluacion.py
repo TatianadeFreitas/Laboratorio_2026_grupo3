@@ -59,8 +59,11 @@ class Evaluacion:
         # Retornamos una cadena limpia con toda la información clave de la evaluación
         return (f"Código: {self.__codigo} | Fecha: {fecha_str} | "
                 f"Opción: {self.__opcion.nombre} | Caso: {self.__caso.nombre} | "
-                f"Puntaje: {self.__puntaje_total:.2f} | Costo: USD {self.__costo_mensual:.2f} | Estado: {self.__estado}")
-
+                f"Presupuesto del caso: USD {self.__caso.presupuesto:.2f} | "
+                f"Puntaje: {self.__puntaje_total:.2f} | Costo: USD {self.__costo_mensual:.2f} | "
+                f"Estado: {self.__estado}")
+                #:.2f sirve para mostrar el puntaje y costo con 2 decimales
+                
     def actualizar_resultados(self, puntaje, costo, estado):
         self.__puntaje_total = puntaje
         self.__costo_mensual = costo

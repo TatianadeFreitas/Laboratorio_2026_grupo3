@@ -2,9 +2,9 @@ class CasoUso:
     
     def __init__(self, codigo, nombre, presupuesto, puntaje_minimo):
         self.__codigo = codigo 
-        self.__nombre = nombre
-        self.__presupuesto = presupuesto
-        self.__puntaje_minimo = puntaje_minimo
+        self.nombre = nombre
+        self.presupuesto = presupuesto
+        self.puntaje_minimo = puntaje_minimo
 
     @property
     def codigo(self):
@@ -22,7 +22,7 @@ class CasoUso:
         if valor.strip() == "": #Comprueba que el valor no esté vacío después de eliminar los espacios en blanco al inicio y al final
             raise ValueError("El nombre no puede estar vacío.")
 
-        self.__nombre = valor
+        self.__nombre = valor.strip()
 
     @property
     def presupuesto(self):
@@ -30,7 +30,9 @@ class CasoUso:
 
     @presupuesto.setter
     def presupuesto(self, valor):
-        if valor < 0:
+        if type(valor) not in (int, float):
+            raise ValueError("El presupuesto debe ser un número.")
+        if  valor < 0:
             raise ValueError("El presupuesto debe ser mayor o igual a cero.")
 
         self.__presupuesto = valor
@@ -46,7 +48,7 @@ class CasoUso:
 
         self.__puntaje_minimo = valor
 
-    def __str__(self):
+    def __str__(self): #sirve para definir cómo se muestra un objeto cuando lo imprimimos / Se utiliza para indicar qué información queremos mostrar cuando hacemos un print() de un objeto.
         return (f"Código: {self.__codigo} - "
                 f"Nombre: {self.__nombre} - "
                 f"Presupuesto: {self.__presupuesto} USD - "
