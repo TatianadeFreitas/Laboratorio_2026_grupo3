@@ -119,8 +119,8 @@ class Sistema:
                 raise ErrorLaboratorio("Esa opción ya está registrada.")
             posicion += 1
 
-        # Comprobamos que los puntajes sean un diccionario.
-        if not isinstance(puntajes, dict):
+        # Comprobamos que los puntajes sean un diccionario con el isinstance que pregunta si un objeto es de cierta clase y devuelve True o False
+        if not isinstance(puntajes, dict): # (objeto, Clase) 
             raise ErrorLaboratorio("Los puntajes deben ser un diccionario.")
 
         # Comprobamos que haya exactamente un puntaje por criterio.
